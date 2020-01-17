@@ -1,11 +1,11 @@
 <h1>Rock Paper Scissors Lizard Spock</h1>
 <div class="player-container" id="player">
   <h2>You - {{playerScore}}</h2>
-  <fa-icon [icon]="['far', 'hand-rock']" title="Rock" (click)="pick('rock')"></fa-icon>
-  <fa-icon [icon]="['far', 'hand-paper']" title="Paper" (click)="pick('paper')"></fa-icon>
-  <fa-icon [icon]="['far', 'hand-scissors']" title="Scissors" (click)="pick('scissors')"></fa-icon>
-  <fa-icon [icon]="['far', 'hand-lizard']" title="Lizard" (click)="pick('lizard')"></fa-icon>
-  <fa-icon [icon]="['far', 'hand-spock']" title="Spock" (click)="pick('spock')"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-rock']" title="Rock" (click)="select('rock')"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-paper']" title="Paper" (click)="select('paper')"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-scissors']" title="Scissors" (click)="select('scissors')"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-lizard']" title="Lizard" (click)="select('lizard')"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-spock']" title="Spock" (click)="select('spock')"></fa-icon>
 </div>
 <div class="player-container" id="computer">
   <h2>Computer - {{computerScore}}</h2>
@@ -15,3 +15,22 @@
   <fa-icon [icon]="['far', 'hand-lizard']" title="Lizard"></fa-icon>
   <fa-icon [icon]="['far', 'hand-spock']" title="Spock"></fa-icon>
 </div>
+
+  <!-- <h2>You - {{playerScore}}<span *ngIf="playerChoice" class="choice"> --- {{playerChoice}}</span></h2>
+  <i class="far fa-hand-rock" title="Rock" (click)="select('rock')" [ngClass]="{'selected':(playerChoice === 'rock')}"></i>
+  <i class="far fa-hand-paper" title="Paper" (click)="select('paper')" [ngClass]="{'selected':(playerChoice === 'paper')}"></i>
+  <i class="far fa-hand-scissors" title="Scissors" (click)="select('scissors')" [ngClass]="{'selected':(playerChoice === 'scissors')}"></i>
+  <i class="far fa-hand-lizard" title="Lizard" (click)="select('lizard')" [ngClass]="{'selected':(playerChoice === 'lizard')}"></i>
+  <i class="far fa-hand-spock" title="Spock" (click)="select('spock')" [ngClass]="{'selected':(playerChoice === 'spock')}"></i> -->
+
+  <!-- <h2>Computer - {{computerScore}}<span *ngIf="computerChoice" class="choice"> --- {{computerChoice}}</span></h2>
+  <i class="far fa-hand-rock" title="Rock" [ngClass]="{'selected':(computerChoice === 'rock')}"></i>
+  <i class="far fa-hand-paper" title="Paper" [ngClass]="{'selected':(computerChoice === 'paper')}"></i>
+  <i class="far fa-hand-scissors" title="Scissors" [ngClass]="{'selected':(computerChoice === 'scissors')}"></i>
+  <i class="far fa-hand-lizard" title="Lizard" [ngClass]="{'selected':(computerChoice === 'lizard')}"></i>
+  <i class="far fa-hand-spock" title="Spock" [ngClass]="{'selected':(computerChoice === 'spock')}"></i> -->
+
+<!-- <div class="result-container">
+  <i class="fas fa-sync-alt" title="Reset" (click)="reset()"></i>
+  <h2 class="result-text">{{resultText}}</h2>
+</div> -->

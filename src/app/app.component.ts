@@ -1,40 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   playerScore: number;
-  playerChoice: string;
-  
   computerScore: number;
-  computerChoiceNumber: number;
+  playerChoice: string;
   computerChoice: string; 
+  computerChoiceNumber: number;
+  // playerWins: boolean; 
+  // resultText: string;
+
   choices  =  { rock: {name: "Rock", defeats: ["scissors","lizard"]},
                 paper: {name: "Paper", defeats: ["rock", "spock"]},
                 scissors: {name: "Scissors", defeats: ["paper", "lizard"]},
                 lizard: {name: "Lizard", defeats: ["paper","spock"]},
                 spock: {name: "Spock", defeats: ["scissors","rock"]}
               };
-  loading = false;  //Delay to show computer's reaction, like it's thinking
 
-  constructor() {
+  ngOnInit() {
     this.playerScore = 0;
     this.computerScore = 0;
   }
 
-  pick( choice: string ): void {
+  // reset() {
+  //   this.playerScore = 0;
+  //   this.computerScore = 0;
+  //   this.resultText = "";
+  //   this.playerChoice = "";
+  //   this.computerChoice = "";
+  // }
+
+  select( choice: string ) {
     this.playerChoice = choice; 
     console.log(this.playerChoice);
-    this.playerScore++;
     this.computerChoiceNumber = Math.random();
-    this.choiceMade();
     console.log(this.computerChoiceNumber);
+    this.computerChoiceMade();
+    // this.checkResult();
   }
 
-  choiceMade() {   
+  computerChoiceMade() {   
   if (this.computerChoiceNumber < 0.2) {
     this.computerChoice = "rock";
   } else if (this.computerChoiceNumber <= 0.4) {
@@ -49,56 +58,23 @@ export class AppComponent {
     console.log(this.computerChoice); 
   }
 
+  // checkResult() {
+  //   if(this.playerChoice == this.computerChoice) {
+  //     this.resultText = "It's a tie.";
+  //   } else {
+  //     var choice;
+  //     choice = this.choices[this.playerChoice];
+  //     this.playerWins = choice.defeats.indexOf(this.computerChoice) > -1;
+  //     console.log(this.playerWins);
+  //     if (this.playerWins == true) {
+  //       this.resultText = "You Won!";
+  //       this.playerScore++
+  //     } else {
+  //       this.resultText = "You Lost!"
+  //       this.computerScore++;
+  //     }
+  //   }
+  // }
 
-
-
-
-
-
-
-
-//   title = 'spock-rock-game';
-//   computerChoiceNumber: number = Math.random();
-//   computerChoiceText: string; 
-//   choices  =  {rock : {name: "Rock", defeats: ["scissors","lizard"]},
-//                  paper: {name: "Paper", defeats: ["rock", "spock"]},
-//                  scissors: {name: "Scissors", defeats: ["paper", "lizard"]},
-//                  lizard: {name: "Lizard", defeats:["paper","spock"]},
-//                  spock: {name: "Spock", defeats:["scissors","rock"]}
-//                 };
-
-// selectWeapon() {
-//   if (this.computerChoiceNumber < 0.2) {
-//     this.computerChoiceText = "rock";
-//   } else if (this.computerChoiceNumber <= 0.4) {
-//       this.computerChoiceText = "paper";
-//   } else if (this.computerChoiceNumber <= 0.6) {
-//       this.computerChoiceText = "scissors";
-//   } else if (this.computerChoiceNumber <= 0.8) {
-//       this.computerChoiceText = "lizard";
-//   } else {
-//       this.computerChoiceText = "spock";
-//   }; 
-// }
-
-// var userChoice = prompt("Do you choose rock, paper, scissors, lizard, or spock?").toLowerCase();
-
-// alert("The computer chose " + this.computerChoice);
-
-// if(this.computerChoice == userChoice){
-//     alert("It's a tie");
-// }else if(choices[userChoice] === undefined){
-//     alert("Invalid Choice");
-// }else{
-//     userChoice = choices[userChoice];
-    
-//     var victory = userChoice.defeats.indexOf(this.computerChoice) > -1;
-    
-//     if(victory) {
-//         alert("Vitory! " + userChoice.name + " wins!")
-//     }else{
-//         alert("Defeat, " + this.computerChoice + " wins!");
-//     }   
-// }
     
 }
