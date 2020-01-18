@@ -11,8 +11,8 @@ export class AppComponent implements OnInit {
   playerChoice: string;
   computerChoice: string; 
   computerChoiceNumber: number;
-  // playerWins: boolean; 
   // resultText: string;
+  // playerWins: boolean; 
 
   choices  =  { rock: {name: "Rock", defeats: ["scissors","lizard"]},
                 paper: {name: "Paper", defeats: ["rock", "spock"]},

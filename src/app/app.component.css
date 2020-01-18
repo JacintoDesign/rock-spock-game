@@ -29,7 +29,7 @@ fa-icon {
 
 /* .selected {
   color: black !important;
-}
+} */
 
 .choice {
   text-transform: capitalize; 
@@ -43,7 +43,7 @@ fa-icon {
   color: rgb(235, 43, 52);  
 }
 
-.result-container {
+/* .result-container {
   margin: 0px 50px;
 }
 
