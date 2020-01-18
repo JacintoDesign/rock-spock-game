@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   computerChoice: string; 
   computerChoiceNumber: number;
   resultText: string;
-  // playerWins: boolean; 
+  playerWins: boolean; 
 
   choices  =  { rock: {name: "Rock", defeats: ["scissors","lizard"]},
                 paper: {name: "Paper", defeats: ["rock", "spock"]},
@@ -35,11 +35,11 @@ export class AppComponent implements OnInit {
 
   select( choice: string ) {
     this.playerChoice = choice; 
-    console.log(this.playerChoice);
+    //console.log(this.playerChoice);
     this.computerChoiceNumber = Math.random();
-    console.log(this.computerChoiceNumber);
+    //console.log(this.computerChoiceNumber);
     this.computerChoiceMade();
-    // this.checkResult();
+    this.checkResult();
   }
 
   computerChoiceMade() {   
@@ -54,26 +54,27 @@ export class AppComponent implements OnInit {
   } else {
       this.computerChoice = "spock";
   };
-    console.log(this.computerChoice); 
+    //console.log(this.computerChoice); 
   }
 
-  // checkResult() {
-  //   if(this.playerChoice == this.computerChoice) {
-  //     this.resultText = "It's a tie.";
-  //   } else {
-  //     var choice;
-  //     choice = this.choices[this.playerChoice];
-  //     this.playerWins = choice.defeats.indexOf(this.computerChoice) > -1;
-  //     console.log(this.playerWins);
-  //     if (this.playerWins == true) {
-  //       this.resultText = "You Won!";
-  //       this.playerScore++
-  //     } else {
-  //       this.resultText = "You Lost!"
-  //       this.computerScore++;
-  //     }
-  //   }
-  // }
-
+  checkResult() {
+    if(this.playerChoice == this.computerChoice) {
+      this.resultText = "It's a tie.";
+    } else {
+      var choice;
+      choice = this.choices[this.playerChoice];
+      console.log(choice);
+      console.log(choice.defeats.indexOf(this.computerChoice));
+      this.playerWins = choice.defeats.indexOf(this.computerChoice) > -1;
+      console.log(this.playerWins);
+      if (this.playerWins == true) {
+        this.resultText = "You Won!";
+        this.playerScore++;
+      } else {
+        this.resultText = "You Lost!";
+        this.computerScore++;
+      }
+    }
+  }
     
 }

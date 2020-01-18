@@ -27,10 +27,6 @@ fa-icon {
   color: rgb(235, 43, 52);  
 }
 
-/* .selected {
-  color: black !important;
-} */
-
 .choice {
   text-transform: capitalize; 
 }
@@ -51,6 +47,10 @@ fa-icon {
   font-size: 20px;
   cursor: pointer;
 }
+
+/* .selected {
+  color: black !important;
+} */
 
 /* .result-text {
   font-size: 40px; 
