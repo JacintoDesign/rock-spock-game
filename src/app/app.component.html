@@ -9,11 +9,11 @@
 </div>
 <div class="player-container" id="computer">
   <h2>Computer - {{computerScore}}<span *ngIf="computerChoice" class="choice"> --- {{computerChoice}}</span></h2>
-  <fa-icon *ngIf="computerChoice == 'rock'" [icon]="['far', 'hand-rock']" title="Rock"></fa-icon>
-  <fa-icon *ngIf="computerChoice == 'paper'" [icon]="['far', 'hand-paper']" title="Paper"></fa-icon>
-  <fa-icon *ngIf="computerChoice == 'scissors'" [icon]="['far', 'hand-scissors']" title="Scissors"></fa-icon>
-  <fa-icon *ngIf="computerChoice == 'lizard'" [icon]="['far', 'hand-lizard']" title="Lizard"></fa-icon>
-  <fa-icon *ngIf="computerChoice == 'spock'" [icon]="['far', 'hand-spock']" title="Spock"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-rock']" title="Rock" [ngClass]="{'selected':(computerChoice == 'rock')}"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-paper']" title="Paper" [ngClass]="{'selected':(computerChoice == 'paper')}"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-scissors']" title="Scissors" [ngClass]="{'selected':(computerChoice == 'scissors')}"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-lizard']" title="Lizard" [ngClass]="{'selected':(computerChoice == 'lizard')}"></fa-icon>
+  <fa-icon [icon]="['far', 'hand-spock']" title="Spock" [ngClass]="{'selected':(computerChoice == 'spock')}"></fa-icon>
 </div>
 
 <div class="result-container">
