@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   playerChoice: string;
   computerChoice: string; 
   computerChoiceNumber: number;
-  // resultText: string;
+  resultText: string;
   // playerWins: boolean; 
 
   choices  =  { rock: {name: "Rock", defeats: ["scissors","lizard"]},
@@ -22,17 +22,16 @@ export class AppComponent implements OnInit {
               };
 
   ngOnInit() {
-    this.playerScore = 0;
-    this.computerScore = 0;
+    this.reset();
   }
 
-  // reset() {
-  //   this.playerScore = 0;
-  //   this.computerScore = 0;
-  //   this.resultText = "";
-  //   this.playerChoice = "";
-  //   this.computerChoice = "";
-  // }
+  reset() {
+    this.playerScore = 0;
+    this.computerScore = 0;
+    this.playerChoice = "";
+    this.computerChoice = "";
+    this.resultText = "";
+  }
 
   select( choice: string ) {
     this.playerChoice = choice; 
