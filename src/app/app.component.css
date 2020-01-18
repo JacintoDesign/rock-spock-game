@@ -48,9 +48,9 @@ fa-icon {
   cursor: pointer;
 }
 
-/* .selected {
+.selected {
   color: black !important;
-} */
+}
 
 /* .result-text {
   font-size: 40px; 
