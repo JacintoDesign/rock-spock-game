@@ -52,20 +52,20 @@ fa-icon {
   color: black !important;
 }
 
-/* .result-text {
+.result-text {
   font-size: 40px; 
   margin: unset; 
   position: relative;
   top: -40px;
   left: 40px; 
-} */
+}
 
-/* @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   h1 { font-size: 24px; padding: 50px 25px; margin-top: 0; }
   .player-container { margin: 50px 25px; }
   .result-container { margin: 0px 25px; }
   .fa-sync-alt { font-size: 30px; }
   .result-text { top: -40px; left: 50px; }
   .far { margin-right: 20px; }
-} */
+}
 
